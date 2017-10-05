@@ -1,0 +1,149 @@
+<html>
+<head>
+	<style>
+	body{
+		background-color: #555;
+	}
+	.circulo {
+		background-color: rgb(100,0,0);
+		border-radius: 50%;
+		width: 20px; 
+		height: 20px; 
+		/*
+		border-top: 10px solid transparent;
+		border-bottom: 10px solid transparent; 
+		border-right:10px solid blue; 
+		*/
+		position: relative;
+	}
+	.circulo1{
+		animation: 5s ease-in-out infinite derecha-izquierda,  1s ease-in-out infinite arriba-abajo;
+	}
+	@keyframes derecha-izquierda{
+		0%{
+			left:0px;
+		}
+		50%{
+			left: 500px;
+		}
+		100%{
+			left: 0px;
+		}
+	}
+	@keyframes arriba-abajo{
+		0%{
+			top:0px;
+		}
+		50%{
+			top: 200px;
+		}
+		100%{
+			top: 0px;
+		}
+	}
+	.circulo2{
+		animation: 5s ease-in-out infinite derecha-izquierda-inv,  1s ease-in-out infinite arriba-abajo-inv;
+	}
+
+	@keyframes derecha-izquierda-inv{
+		0%{
+			left: 500px;
+		}
+		50%{
+			left: 0px;
+		}
+		100%{
+			left: 500px;
+		}
+	}
+	@keyframes arriba-abajo-inv{
+		0%{
+			top: 200px;
+		}
+		50%{
+			top: 0px;
+		}
+		100%{
+			top: 200px;
+		}
+	}
+	.circulo-central{
+		background-color: rgb(0,0,100);
+		border-radius: 50%; 
+		height: 100px;
+		width: 100px;
+		position: absolute;
+		top: 50px;
+		left: 200px;
+		animation: 3s linear infinite resize-circulo;
+	}
+	@keyframes resize-circulo{
+		0%{
+			border: 0px solid rgb(0,24,56);
+			height: 100px;
+			width: 100px;
+			/*
+			top: 50px;
+			left: 200px;
+			*/
+		}
+		50%{
+			border: 50px solid rgb(0,24,56);
+			height: 0px;
+			width: 0px;
+			/*
+			top:100px;
+			left: 100px;
+			*/
+		}
+		100%{
+			border: 0px solid rgb(0,24,56);
+			height: 100px;
+			width: 100px;
+			/*
+			top:50px;
+			left: 200px;
+			*/
+		}
+	}
+	.delay1{
+		animation-delay: 0.1s;
+		opacity: 0.9;
+	}
+	.delay2{
+		animation-delay: 0.2s;
+		opacity: 0.8;
+	}
+	.delay3{
+		animation-delay: 0.3s;
+		opacity: 0.7;
+	}
+	.delay4{
+		animation-delay: 0.4s;
+		opacity: 0.6;
+	}
+	.delay5{
+		animation-delay: 0.5s;
+		opacity: 0.5;
+	}
+
+	</style>
+</head>
+<body>
+<div>
+	<div class="circulo circulo1"></div>
+	<div class="circulo circulo1 delay1"></div>
+	<div class="circulo circulo1 delay2"></div>
+	<div class="circulo circulo1 delay3"></div>
+	<div class="circulo circulo1 delay4"></div>
+	<div class="circulo circulo1 delay5"></div>
+	<div class="circulo circulo2"></div>
+	<div class="circulo circulo2 delay1"></div>
+	<div class="circulo circulo2 delay2"></div>
+	<div class="circulo circulo2 delay3"></div>
+	<div class="circulo circulo2 delay4"></div>
+	<div class="circulo circulo2 delay5"></div>
+	<!--div class="circulo-central"></div-->
+</div>
+</body>
+</html

@@ -1,0 +1,28 @@
+{
+	"development":{
+		"DBMSName":		"mysql",
+		"DBUser":		"test",
+		"DBPass":		"1234",
+		"DBAddr":		"127.0.0.1",
+		"DBPort":		"3306",
+		"DBName":		"test",
+		"secret":		"PIw4JaeSm8jsw4VtkMQT",
+		"http_port":	8000,
+		"https_port":	8034,
+		"cert":			"cert.crt",
+		"key":			"privada.key"
+	},
+	"production":{
+		"DBMSName":		"mysql",
+		"DBUser":		"test",
+		"DBPass":		"1234",
+		"DBAddr":		"127.0.0.1",
+		"DBPort":		"3306",
+		"DBName":		"test",
+		"secret":		"PIw4JaeSm8jsw4VtkMQT",
+		"http_port":	8000,
+		"https_port":	8034,
+		"cert":			"cert.crt",
+		"key":			"privada.key"
+	}
+}

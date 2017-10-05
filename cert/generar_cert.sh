@@ -1,0 +1,1 @@
+openssl req  -nodes -new -x509  -keyout $1.key -out $2.cert
