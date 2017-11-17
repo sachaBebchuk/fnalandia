@@ -1,0 +1,91 @@
+@import "variables.less";
+@import "mixins.less";
+
+body{
+	margin: 0;
+	background-color: @bg-color;
+
+	*{
+		color: @fg-color;
+		font-family: helvetica;
+	}
+}
+button{
+
+	background-color: @bg-btn;
+	color: @fg-btn;
+	//border: 1px solid @fg-color;
+	border: 0;
+	padding:5px;
+	border-radius: 3px;
+	outline:none;
+	outline-color: @btn-outline;
+	&:active{
+		background-color: @bg-btn-active;
+		color: @fg-btn-active;
+	}
+	&.btn-aceptar{
+		.btn-color(@fg-btn-aceptar;@bg-btn-aceptar)
+	}
+}
+
+input{
+		padding: 3px;
+}
+input,select{
+
+	background-color: transparent;
+	border: 1px solid @fg-color;
+	border-radius: 2px;
+
+	&:focus{
+		outline-color: @input-outline;
+	}
+}
+select option{
+
+	background-color: @bg-color;
+	color: @fg-color;
+	outline:@fg-color;
+
+	&:hover{
+		background-color:@bg-option-hover;
+	}
+}
+
+div.divInput{
+
+	display: inline-block;
+
+	input,select{
+		margin-top:3px;
+		margin-left: 15px;
+		display: block;
+		padding:2px;
+		&::-webkit-input-placeholder{
+			color:lighten(@bg-color,10%);
+		}
+	}
+}
+table{
+	width: 90%;
+	margin: 10px 5%;
+
+	thead tr{
+		background-color: darken(@bg-color, 5%);
+	}
+
+	tbody tr{
+		text-align: center;
+
+		td.tdNum input{
+			text-align: right;
+		}
+	}
+}
+h3{
+	padding-left: 5px;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	background-color: darken(@bg-color, 5%);
+}
