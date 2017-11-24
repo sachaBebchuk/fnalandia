@@ -1,10 +1,10 @@
 
 // dependencies
-var path = require('path')
-var fs = require('fs')
-var http = require('http')
-var https = require('https')
-var app = require('./app')
+var path 			= require('path')
+var fs 				= require('fs')
+var http 			= require('http')
+var https 		= require('https')
+var app 			= require('./app')
 var env       = process.env.NODE_ENV || "development"
 var config    = require("./config/config.json")[env]
 
@@ -21,7 +21,7 @@ var credentials = { key: privateKey,
 
 var httpsServer = https.createServer(credentials, app);
 httpsServer.listen(config.htttps_port,addr,function(){
-	
+
 	console.log('HTTPS server listening to:\t' + addr + ":" + config.https_port)
 })
 */

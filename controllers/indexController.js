@@ -7,7 +7,7 @@ module.exports.indexGet = function(req, res) {
 	}).then(result => {
 
 		var registros = []
-		
+
 		for( var i = 0; i < result.length; i++){
 			registros.push(result[i].dataValues.name)
 		}

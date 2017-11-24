@@ -1,20 +1,19 @@
 
 // dependencies
-var express = require('express')
-var path = require('path')
-var compression = require('compression')
-var favicon = require('serve-favicon')
-var bodyParser = require('body-parser');
-var cookieParser = require('cookie-parser')
-var helmet = require('helmet')
-var expressValidator = require('express-validator')
-var session = require('express-session')
-var sequelize = require('./db')
-var env       = process.env.NODE_ENV || "development"
-var config    = require("./config/config.json")[env]
-
-// routes
-var index = require("./routes/index")
+var express 					= require('express')
+var path 							= require('path')
+var compression 			= require('compression')
+var favicon 					= require('serve-favicon')
+var bodyParser 				= require('body-parser');
+//var cookieParser 			= require('cookie-parser')
+var helmet 						= require('helmet')
+var expressValidator 	= require('express-validator')
+var session						= require('express-session')
+var sequelize					= require('./db')
+var addRoutes					= require("./addRoutes")
+var permisos					= require("./permisos")
+var env								= process.env.NODE_ENV || "development"
+var config						= require("./config/config.json")[env]
 
 var app = express()
 
@@ -23,19 +22,27 @@ app.use(helmet())
 app.use(compression())
 app.set('trust proxy', 1)
 app.use(session({
+	name: "laSesion",
 	secret: config.secret,
-	resave: false,
+	resave: true,
 	saveUninitialized: true,
-	cookie: { secure: true }
+	cookie: {
+		maxAge: 365 * 24 * 60 * 60 * 1000,
+		httpOnly: false 
+		/*,secure: true*/
+	}
 }))
-app.use(cookieParser(config.secret,{}))
+//app.use(cookieParser(config.secret,{}))
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(expressValidator())
 
-// routes setup
-app.use('/',index)
+//Require user to browse
+app.use(permisos)
+
+// add routes middleware
+addRoutes(app)
 
 // static content setup
 app.use('/static', express.static(path.join(__dirname,'public')))
