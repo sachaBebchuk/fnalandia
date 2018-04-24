@@ -1,0 +1,24 @@
+@import "mixins/variables.less";
+
+.btn-barra-titulo(@color){
+	background: lighten(@bg-barra-titulo,5%);
+	&:hover{
+		background-color:@color;
+	}
+}
+
+
+.btn-color(@fg;@bg){
+	background-color:@bg;
+	color:@fg;
+	border:0;
+	&:active{
+		background-color: @fg;
+		color:@bg;
+	}
+}
+
+.btn-cuadrado{
+	width: 100%;
+	border-radius: 0;
+}

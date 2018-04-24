@@ -1,17 +1,21 @@
-head
-	script(src="static/js/login.js","defer")
-	link(rel="stylesheet",type="text/css",href="static/css/estilo.css")
-	link(rel="stylesheet",type="text/css",href="static/css/login.css")
-body
-	div.banner
-		img(src="static/img/sgs-logo.svg")
-	div.triangulito-abajo
-	div.div-login
-		div.marco-login
-			if errorAutenticacion
-				div.errorAutenticacion Par de usuario y contrase&ntilde;a incorrectos
-			form(method="POST")
-				div.div-login-inputs
-					input(name="usuario",placeholder="Usuario")
-					input(name="pass","type"="password",placeholder="··············")
-				button("type"="submit") Ingresar
+html
+	head
+		title CM05
+		script(src="static/js/jquery-3.2.1.min.js")
+		script(src="static/js/login.js","defer")
+		link(rel="stylesheet",type="text/css",href="static/css/estilo.css")
+		link(rel="stylesheet",type="text/css",href="static/css/login.css")
+	body
+		div.banner
+			img(src="static/img/sgs-logo.svg")
+		div.triangulito-abajo
+		div.div-login
+			div.marco-login
+				div.login-content
+					if errorAutenticacion
+						div.errorAutenticacion Par de usuario y contrase&ntilde;a incorrectos
+					form(method="POST")
+						div.div-login-inputs
+							input.input-login(name="usuario",placeholder="Usuario")
+							input.input-login(name="pass","type"="password",placeholder="··············")
+						button("type"="submit") Ingresar

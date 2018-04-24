@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+html
+	head
+		title CM05
+		link(rel="stylesheet",type="text/css",href="static/css/estilo.css")
+		link(rel="stylesheet",type="text/css",href="static/css/messageBox.css")
+		link(rel="stylesheet",type="text/css",href="static/css/index.css")
+
+		script(src="static/js/messageBox.js")
+		script(src="static/js/jquery-3.2.1.min.js")
+		script= "var opcionesMenu ="
+			include ../config/opcionesMenu.json
+		script(src="static/js/menu.js",defer="defer")
+
+		block head
+	body
+		div.banner
+			h1 CM05
+			div#menu
+		div#content
+			block content
