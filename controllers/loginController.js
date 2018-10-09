@@ -1,5 +1,5 @@
-const pbkdf2 		= require("pbkdf2")
-const crypto 		= require("crypto")
+const pbkdf2    = require("pbkdf2")
+const crypto    = require("crypto")
 const sequelize = require("./../db")
 
 module.exports.loginGet = function(req, res) {
@@ -18,7 +18,7 @@ module.exports.loginPost = function(req, res) {
 		var passBuffer = new Buffer(req.body.pass)
 		var saltBuffer = user.salt
 
-	  var derivedKey = pbkdf2.pbkdf2Sync(passBuffer, saltBuffer, 1000, 64, 'sha256')
+		var derivedKey = pbkdf2.pbkdf2Sync(passBuffer, saltBuffer, 1000, 64, 'sha256')
 
 		if(user.pass_hash === derivedKey.toString('hex')){
 
@@ -30,7 +30,7 @@ module.exports.loginPost = function(req, res) {
 				errorAutenticacion: true
 			})
 		}
-  }).catch(()=>{
+	}).catch(()=>{
 		res.render("login.pug",{
 			errorAutenticacion: true
 		})

@@ -1,11 +1,11 @@
 {
 	"development":{
 		"DBMSName":		"mysql",
-		"DBUser":		"test",
+		"DBUser":		"fnalandia",
 		"DBPass":		"1234",
 		"DBAddr":		"127.0.0.1",
 		"DBPort":		"3306",
-		"DBName":		"test",
+		"DBName":		"fnalandia",
 		"secret":		"PIw4JaeSm8jsw4VtkMQT",
 		"http_port":	8000,
 		"https_port":	8034,
@@ -14,11 +14,11 @@
 	},
 	"production":{
 		"DBMSName":		"mysql",
-		"DBUser":		"test",
+		"DBUser":		"fnalandia",
 		"DBPass":		"1234",
 		"DBAddr":		"127.0.0.1",
 		"DBPort":		"3306",
-		"DBName":		"test",
+		"DBName":		"fnalandia",
 		"secret":		"PIw4JaeSm8jsw4VtkMQT",
 		"http_port":	8000,
 		"https_port":	8034,

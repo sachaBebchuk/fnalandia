@@ -1,7 +1,7 @@
 {
-  "name": "modelo-webapp",
-  "version": "1.0.0",
-  "description": "modelo para las aplicaciones web que vaya a hacer en node",
+  "name": "fnalandia",
+  "version": "0.1.0",
+  "description": "plataforma para comercializar fanzines online",
   "main": "main.js",
   "dependencies": {
     "compression": "^1.7.1",
@@ -10,11 +10,11 @@
     "helmet": "^3.8.2",
     "cookie-parser": "~1.4.3",
     "body-parser": "~1.18.2",
-    "express-validator":"^4.2.1",
-    "pug":"^2.0.0-rc.4",
-    "sequelize":"~4.11.3",
-    "mysql2":"~1.4.2",
-    "express-session":"~1.15.6"
+    "express-validator": "^4.2.1",
+    "pug": "^2.0.0-rc.4",
+    "sequelize": "~4.11.3",
+    "mysql2": "~1.4.2",
+    "express-session": "~1.15.6"
   },
   "devDependencies": {
     "nodemon": "^1.12.1"
