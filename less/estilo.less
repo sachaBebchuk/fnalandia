@@ -1,0 +1,31 @@
+@import "mixins/variables.less";
+
+@font-face {
+	font-family: notoSans;
+	src: url("../fonts/NotoSans-Regular.ttf");
+}
+body{
+	background-color: @bgColor;
+	color: @fgColor;
+	margin: 0;
+	*{
+		color: @fgColor;
+		font-family: notoSans;
+	}
+	min-height: 100vh;
+}
+
+a{
+	text-decoration: none;
+}
+
+input{
+	background-color: transparent;
+	border: 1px solid @fgColor;
+	border-radius: 2px;
+	color: @fgColor;
+	&::placeholder{
+		color: darken(@fgColor,10%);
+	}
+	height: 30px;
+}

@@ -1,19 +1,18 @@
 
 // dependencies
-var express 					= require('express')
-var path 							= require('path')
-var compression 			= require('compression')
-var favicon 					= require('serve-favicon')
-var bodyParser 				= require('body-parser');
-//var cookieParser 			= require('cookie-parser')
-var helmet 						= require('helmet')
-var expressValidator 	= require('express-validator')
-var session						= require('express-session')
-var sequelize					= require('./db')
-var addRoutes					= require("./addRoutes")
-var permisos					= require("./permisos")
-var env								= process.env.NODE_ENV || "development"
-var config						= require("./config/config.json")[env]
+var env                 = process.env.NODE_ENV || "development"
+var express             = require('express')
+var path                = require('path')
+var compression         = require('compression')
+var favicon             = require('serve-favicon')
+var bodyParser          = require('body-parser');
+//var cookieParser      = require('cookie-parser')
+var helmet              = require('helmet')
+var expressValidator    = require('express-validator')
+var session             = require('express-session')
+var sequelize           = require('./db')
+var addRoutes           = require("./addRoutes")
+var config              = require("./config/config.json")[env]
 
 var app = express()
 
@@ -33,13 +32,10 @@ app.use(session({
 	}
 }))
 //app.use(cookieParser(config.secret,{}))
-app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))
+//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(expressValidator())
-
-//Require user to browse
-app.use(permisos)
 
 // add routes middleware
 addRoutes(app)

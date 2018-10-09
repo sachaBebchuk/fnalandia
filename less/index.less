@@ -1,0 +1,125 @@
+@import "mixins/variables.less";
+
+@navHeight: 75px;
+
+nav{
+	background-color: fade(@fgColor,15%);
+	border-bottom: 1px solid @fgColor;
+	border-left: 20px solid @fgColor;
+	height: @navHeight;
+
+	display: flex;
+	align-items: center;
+	
+	& > *{
+		margin-left: 15px;
+	}
+
+	div.logo{
+		border-radius: 50%;
+		width: 30px;
+		height: 30px;
+		background-color: saturate(@fgColor,5%);
+	}
+
+	#userSection{
+		height: 100%;
+		display: flex;
+		margin-left: auto;
+		align-items: center;
+		width: 15vw;
+		a{
+			font-weight: bolder;
+		}
+		#ingresar{
+
+			height: 100%;
+			display: flex;
+			align-items: center;			
+			background-color: @fgColor;
+			padding: 0 5px;
+			margin-right: 10px;
+			a{
+				color: @bgColor;
+			}
+			#ingresarForm{
+				position: absolute;
+				display: none;
+			}
+		}
+	}
+}
+
+footer{
+	position:absolute;
+	text-align: right;
+	bottom:0;
+	width: 95%;
+	background-color: lighten(@bgColor,20%);
+	color: darken(@fgColor,50%) !important;
+	padding: 0 2.5%;
+}
+
+#content{
+
+	h1{
+		background-color: lighten(@bgColor,20%);
+		color: @bgColor;
+		width: 100%;
+		text-align: center;
+		margin: 0;
+	}
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	#publicaciones{
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		.publicacion{
+			
+			display: flex;
+			flex-direction: column-reverse;
+			width: 20vw;
+			height: 20vw;
+			margin:1%;
+			background-color:darken(@fgColor,20%);
+			border-radius: 10px;
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: cover;
+			border: 2px solid darken(@fgColor,20%);
+
+			& *{
+				opacity: 0;
+				transition: 0.2s;
+			}
+
+			&:hover *{
+				opacity: 1;
+			}
+
+			.descripcion{
+				background-color: fade(darken(@fgColor,30%),50%);
+				border-bottom-left-radius: 8px;
+				border-bottom-right-radius: 8px;
+				*{
+					color: darken(@fgColor,40%);
+					margin: 2px;
+				}
+				.titulo{
+					font-size: 130%;
+					font-weight: bold;
+				}
+				.copete{
+
+				}
+			}
+
+		}
+	}
+}

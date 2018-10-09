@@ -1,7 +1,27 @@
-head
-	link(rel="stylesheet",type="text/css",href="static/css/estilo.css")
-body
-	p Lista de cosas en la tabla t1
-	div
-		each registro in registros
-			p= registro
+extends layout.pug
+
+block head_styles
+	link(rel="stylesheet",type="text/css",href="static/css/index.css")
+
+block content
+	nav
+		div.logo
+		h1 FNALANDIA
+		input(placeholder="buscar",name="buscar")
+		div#userSection
+			div#ingresar
+				a(href="#") Ingresar
+				form#ingresarForm
+					input(name="usuario",placeholder="usuario")
+					input(name="contrasenia",placeholder="contrasenia",type="password")
+			a(href="#") Registrarse
+
+	div#content
+		H1 PUBLICACIONES
+		div#publicaciones
+			each publicacion in publicaciones
+				a.publicacion(href="#",style="background-image:url("+"static/img/"+publicacion.thumb+")")
+					div.descripcion
+						p.titulo=publicacion.titulo
+						p.copete=publicacion.copete
+	footer N&S®©™
