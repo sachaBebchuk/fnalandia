@@ -1,21 +1,22 @@
-html
-	head
-		title CM05
-		script(src="static/js/jquery-3.2.1.min.js")
-		script(src="static/js/login.js","defer")
-		link(rel="stylesheet",type="text/css",href="static/css/estilo.css")
-		link(rel="stylesheet",type="text/css",href="static/css/login.css")
-	body
-		div.banner
-			img(src="static/img/sgs-logo.svg")
-		div.triangulito-abajo
-		div.div-login
-			div.marco-login
-				div.login-content
-					if errorAutenticacion
-						div.errorAutenticacion Par de usuario y contrase&ntilde;a incorrectos
-					form(method="POST")
-						div.div-login-inputs
-							input.input-login(name="usuario",placeholder="Usuario")
-							input.input-login(name="pass","type"="password",placeholder="··············")
-						button("type"="submit") Ingresar
+extends layout.pug
+
+block head_styles
+	link(rel="stylesheet",type="text/css",href="static/css/estilo.css")
+	link(rel="stylesheet",type="text/css",href="static/css/login.css")
+
+block head_scripts
+	script(src="static/js/login.js","defer")
+
+block content
+	form(method="POST").div-login
+
+
+		if errorAutenticacion
+			div.errorAutenticacion Par de cuenta y contrase&ntilde;a incorrectos.	
+	
+		input.input-login(name="usuario",placeholder="Cuenta")
+		input.input-login(name="pass","type"="password",placeholder="··············")
+		button("type"="submit") Ingresar
+		a.registrarse(href="#") O Registrarse
+	object.profilePic(data=profilePic,type="image/png")
+		img.profilePic(src="static/img/placeholderProfile.svg")

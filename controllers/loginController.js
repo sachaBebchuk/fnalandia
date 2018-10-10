@@ -3,7 +3,12 @@ const crypto    = require("crypto")
 const sequelize = require("./../db")
 
 module.exports.loginGet = function(req, res) {
-	res.render("login.pug")
+
+	let viewBag = {
+		profilePic: "static/img/placeholderProfile.svg"
+	}
+
+	res.render("login.pug",viewBag)
 }
 
 module.exports.loginPost = function(req, res) {

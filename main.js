@@ -1,12 +1,14 @@
 
-// dependencies
-var path 			= require('path')
-var fs 				= require('fs')
-var http 			= require('http')
-var https 		= require('https')
-var app 			= require('./app')
+// Configurations
 var env       = process.env.NODE_ENV || "development"
 var config    = require("./config/config.json")[env]
+
+// Dependencies
+var path      = require('path')
+var fs        = require('fs')
+var http      = require('http')
+var https     = require('https')
+var app       = require('./app')
 
 // creating server
 const addr = '127.0.0.1'

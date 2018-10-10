@@ -1,0 +1,53 @@
+@import "mixins/variables.less";
+
+@divLoginWidth: 25vw;
+
+body{
+	background-color: darken(@fgColor,30%) !important;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.profilePic{
+	width: @divLoginWidth;
+	height: @divLoginWidth;
+	margin-right: 15vw;
+}
+
+.div-login{
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	width: @divLoginWidth;
+	margin-left: 5vw;
+	padding: 0 5vw;
+	
+	border-left: 1px solid @fgColor;
+	border-right: 1px solid @fgColor;
+
+	input{
+		background-color: @bgColor;
+	}
+
+	& > *{
+		margin-top: 5px;
+	}
+
+	.errorAutenticacion{
+		text-align:center;
+		background-color:desaturate(red,30%);
+		color: @fgColor;
+		border-radius: 5px;
+		padding: 5px;
+	}
+}
+
+.registrarse{
+	font-size: 75%;
+	text-decoration: underline;
+}

@@ -7,4 +7,4 @@ router.get('/',loginController.loginGet)
 router.post('/',loginController.loginPost)
 
 module.exports.router 	= router
-module.exports.path 	= "/login"
+module.exports.path 	= "/ingresar"
