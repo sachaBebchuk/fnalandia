@@ -4,18 +4,19 @@
   "description": "plataforma para comercializar fanzines online",
   "main": "main.js",
   "dependencies": {
-    "compression": "^1.7.1",
-    "express": "~4.16.0",
-    "serve-favicon": "~2.4.5",
-    "helmet": "^3.8.2",
-    "cookie-parser": "~1.4.3",
     "body-parser": "~1.18.2",
-    "express-validator": "^4.2.1",
-    "pug": "^2.0.0-rc.4",
-    "sequelize": "~4.11.3",
-    "mysql2": "~1.4.2",
+    "compression": "^1.7.1",
+    "cookie-parser": "~1.4.3",
+    "express": "~4.16.0",
     "express-session": "~1.15.6",
-    "pbkdf2": "~3.0.14"
+    "express-validator": "^4.2.1",
+    "helmet": "^3.8.2",
+    "mysql2": "~1.4.2",
+    "pbkdf2": "~3.0.14",
+    "pug": "^2.0.0-rc.4",
+    "request": "^2.88.0",
+    "sequelize": "~4.11.3",
+    "serve-favicon": "~2.4.5"
   },
   "devDependencies": {
     "nodemon": "^1.12.1"

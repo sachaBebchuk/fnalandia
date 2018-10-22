@@ -14,10 +14,9 @@ block content
 				form#ingresarForm
 					input(name="usuario",placeholder="usuario")
 					input(name="contrasenia",placeholder="contrasenia",type="password")
-			a(href="#") Registrarse
+			a(href="/registrarse") Registrarse
 
 	div#content
-		H1 PUBLICACIONES
 		div#publicaciones
 			each publicacion in publicaciones
 				a.publicacion(href="#",style="background-image:url("+"static/img/"+publicacion.thumb+")")

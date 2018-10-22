@@ -3,7 +3,7 @@
 @divLoginWidth: 25vw;
 
 body{
-	background-color: darken(@fgColor,30%) !important;
+	background-color: darken(@fgColor,30%);
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
@@ -31,7 +31,8 @@ body{
 	border-right: 1px solid @fgColor;
 
 	input{
-		background-color: @bgColor;
+		background-color: transparent;
+		text-align: center;
 	}
 
 	& > *{
@@ -41,7 +42,7 @@ body{
 	.errorAutenticacion{
 		text-align:center;
 		background-color:desaturate(red,30%);
-		color: @fgColor;
+		color: @bgColor;
 		border-radius: 5px;
 		padding: 5px;
 	}

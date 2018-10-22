@@ -3,7 +3,7 @@ const sequelize	= require("./db")
 const path      = require("path")
 const fs        = require( 'fs' )
 
-var modelsDir = path.join(__dirname,"models")
+let modelsDir = path.join(__dirname,"models")
 
 fs.readdir(modelsDir,loadModels)
 
@@ -13,8 +13,10 @@ function loadModels( err, files){
 
 function loadModel(file, index){
 
-	var model = require(path.join(modelsDir,file))
-	var modelName = file.replace(".js","")
+	let model = require(path.join(modelsDir,file))()
+	let modelName = file.replace(".js","")
 
-	module.exports[modelName] = model();
+	model.sync()
+
+	module.exports[modelName] = model
 }

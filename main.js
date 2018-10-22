@@ -1,27 +1,27 @@
 
 // Configurations
-var env       = process.env.NODE_ENV || "development"
-var config    = require("./config/config.json")[env]
+let env       = process.env.NODE_ENV || "development"
+let config    = require("./config/config.json")[env]
 
 // Dependencies
-var path      = require('path')
-var fs        = require('fs')
-var http      = require('http')
-var https     = require('https')
-var app       = require('./app')
+let path      = require('path')
+let fs        = require('fs')
+let http      = require('http')
+let https     = require('https')
+let app       = require('./app')
 
 // creating server
 const addr = '127.0.0.1'
 
 /*
-var privateKey  = fs.readFileSync(path.join(__dirname, 'cert', config.key), 'utf8');
-var certificate = fs.readFileSync(path.join(__dirname, 'cert', config.cert), 'utf8');
+let privateKey  = fs.readFileSync(path.join(__dirname, 'cert', config.key), 'utf8');
+let certificate = fs.readFileSync(path.join(__dirname, 'cert', config.cert), 'utf8');
 
-var credentials = { key: privateKey,
+let credentials = { key: privateKey,
 					cert: certificate
 };
 
-var httpsServer = https.createServer(credentials, app);
+let httpsServer = https.createServer(credentials, app);
 httpsServer.listen(config.htttps_port,addr,function(){
 
 	console.log('HTTPS server listening to:\t' + addr + ":" + config.https_port)
@@ -29,7 +29,7 @@ httpsServer.listen(config.htttps_port,addr,function(){
 */
 
 
-var httpServer = http.createServer(app);
+let httpServer = http.createServer(app);
 
 httpServer.listen(config.http_port,addr,function(){
 
