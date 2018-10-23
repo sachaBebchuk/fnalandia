@@ -1,6 +1,6 @@
 @import "mixins/variables.less";
 
-@navHeight: 75px;
+@navHeight: 50px;
 
 nav{
 	background-color: fade(@bgColor,40%);
@@ -29,12 +29,15 @@ nav{
 		background-size: 10%;
 	}
 
-	#userSection{
+	#userSection, #loginSection{
 		height: 100%;
 		display: flex;
 		margin-left: auto;
 		align-items: center;
 		width: 15vw;
+	}
+
+	#loginSection{
 		a{
 			font-weight: bolder;
 		}
@@ -55,12 +58,37 @@ nav{
 			}
 		}
 	}
+	#userSection{
+
+		justify-content: end;
+		background-color: rgba(0,0,0,0.2);
+		width: auto;
+		padding-left: 15px;
+
+		& > *{
+			margin-right: 10px;
+		}
+
+		.profilePic{
+			border-radius: 50%;
+			border: 1px solid @fgColor;
+			height: 60%;
+		}
+
+	}
+
+	#userMenu{
+		background-color: rgba(0,0,0,0.35);
+		right: 0;
+		width: 15vw;
+		position: absolute;
+		top: @navHeight;
+		padding:3px;
+	}
 }
 
 footer{
-	position:absolute;
 	text-align: right;
-	bottom:0;
 	width: 95%;
 	background-color: lighten(@bgColor,20%);
 	color: darken(@fgColor,50%) !important;

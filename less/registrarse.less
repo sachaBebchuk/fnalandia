@@ -1,0 +1,57 @@
+@import "mixins/variables.less";
+
+body{
+	background-color: @bgColor;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	align-items: center;
+}
+
+.features{
+	width: 50vw;
+	height: 82vh;
+
+	background-color: rgba(255,255,255,.2);
+	border-radius: 5px;
+}
+
+form{
+	width: 40vw;
+	height: 75vh;
+	padding: 10px;
+    padding: 1vw 1vh;
+	padding-top: 5vh;
+	text-align: center;
+	border: 1px solid #8694b6;
+	border-lefot: 0;
+	background-color: fade(#475576,40%);
+	opacity: 0.95;
+
+	*:not(button){
+		color: lighten(@fgColor,20%);
+	}
+
+	& > *{
+		margin-bottom: 5px;
+	}
+
+	h1{
+		margin-top: 0;
+	}
+
+	button{
+		width: 100%;
+	}
+
+	div{
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		input{
+			width:100%;
+			text-align: center;
+		}
+	}
+}

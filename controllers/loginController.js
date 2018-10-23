@@ -14,6 +14,11 @@ module.exports.loginGet = function(req, res) {
 	res.render("login.pug",viewBag)
 }
 
+module.exports.logout = function(req, res) {
+	req.session.destroy()
+	res.redirect("/")
+}
+
 module.exports.loginPost = function(req, res) {
 
 	if( req.body["g-recaptcha-response"] != undefined ){
@@ -48,6 +53,7 @@ function loginCaptcha(req, res){
 }
 
 function login(req, res){
+
 	sequelize.query(
 		"SELECT * FROM `Usuarios` WHERE `nombre`=:usuario",
 		{ replacements: { usuario: req.body.usuario  }, type: sequelize.QueryTypes.SELECT }
@@ -62,14 +68,17 @@ function login(req, res){
 
 		if(user.pass_hash === derivedKey.toString('hex')){
 
-			req.session.userId = user.id_usuario
+			req.session.userId = user.id
+			
 			res.redirect("/")
+
 		}else{
 
 			res.render("login.pug",{
 				errorAutenticacion: true
 			})
 		}
+
 	}).catch(()=>{
 		res.render("login.pug",{
 			errorAutenticacion: true

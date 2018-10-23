@@ -1,0 +1,26 @@
+extends layout.pug
+
+block head_styles
+	link(rel="stylesheet",type="text/css",href="static/css/registrarse.css")
+
+block head_scripts
+	script(src="https://www.google.com/recaptcha/api.js")
+
+block content
+	div.features
+	form(name="registro",id="formRegistro",method="POST")
+		h1 REGISTRARSE
+		div
+			label(for="nombre") Nombre:
+			input(name="nombre")
+		div
+			label(for="email") Email:
+			input(name="email")
+		div
+			label(for="pass") Contraseña:
+			input(name="pass",type="password")
+		div
+			label(for="pass2") Repetir contraseña:
+			input(name="pass2",type="password")
+		div(class="g-recaptcha","data-sitekey"=sitekey)
+		button() Aceptar

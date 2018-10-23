@@ -8,13 +8,23 @@ block content
 		div.logo
 		h1 FNALANDIA
 		input#buscar(placeholder="buscar",name="buscar")
-		div#userSection
-			div#ingresar
-				a(href="ingresar") Ingresar
-				form#ingresarForm
-					input(name="usuario",placeholder="usuario")
-					input(name="contrasenia",placeholder="contrasenia",type="password")
-			a(href="/registrarse") Registrarse
+		if usuario == undefined
+			div#loginSection
+				div#ingresar
+					a(href="ingresar") Ingresar
+					form#ingresarForm
+						input(name="usuario",placeholder="usuario")
+						input(name="contrasenia",placeholder="contrasenia",type="password")
+				a(href="/registrarse") Registrarse
+		else
+			a(href="/perfil/"+usuario.id)#userSection
+				p=usuario.nombre
+				img.profilePic(src=usuario.profile_pic)
+			div#userMenu
+				a(href="/configuracion/")
+					div.menuOption Configuracion
+				a(href="/salir/")
+					div.menuOption Salir
 
 	div#content
 		div#publicaciones
