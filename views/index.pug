@@ -17,14 +17,16 @@ block content
 						input(name="contrasenia",placeholder="contrasenia",type="password")
 				a(href="/registrarse") Registrarse
 		else
-			a(href="/perfil/"+usuario.id)#userSection
+			div#userSection
 				p=usuario.nombre
-				img.profilePic(src=usuario.profile_pic)
-			div#userMenu
+				a(href="/perfil/"+usuario.id)
+					img.profilePic(src=usuario.profile_pic)
+				a(href="/subir/")
+					img(src="static/img/subir.svg")
 				a(href="/configuracion/")
-					div.menuOption Configuracion
+					img(src="static/img/config.svg")
 				a(href="/salir/")
-					div.menuOption Salir
+					img(src="static/img/logout.svg")
 
 	div#content
 		div#publicaciones

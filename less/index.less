@@ -65,32 +65,29 @@ nav{
 		width: auto;
 		padding-left: 15px;
 
-		& > *{
-			margin-right: 10px;
-		}
-
 		.profilePic{
 			border-radius: 50%;
 			border: 1px solid @fgColor;
 			height: 60%;
+			margin-left: 5px;
+			margin-right: 5px;
 		}
 
-	}
+		img,a{
+			height: 100%;
+		}
 
-	#userMenu{
-		background-color: rgba(0,0,0,0.35);
-		right: 0;
-		width: 15vw;
-		position: absolute;
-		top: @navHeight;
-		padding:3px;
+		a{
+			display: flex;
+			align-items: center;
+		}
 	}
 }
 
 footer{
 	text-align: right;
 	width: 95%;
-	background-color: lighten(@bgColor,20%);
+	background-color: fade(lighten(@bgColor,20%),40%);
 	color: darken(@fgColor,50%) !important;
 	padding: 0 2.5%;
 }
