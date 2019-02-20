@@ -1,33 +1,6 @@
-extends layout.pug
+extends index_layout.pug
 
-block head_styles
-	link(rel="stylesheet",type="text/css",href="static/css/index.css")
-
-block content
-	nav
-		div.logo
-		h1 FNALANDIA
-		input#buscar(placeholder="buscar",name="buscar")
-		if usuario == undefined
-			div#loginSection
-				div#ingresar
-					a(href="ingresar") Ingresar
-					form#ingresarForm
-						input(name="usuario",placeholder="usuario")
-						input(name="contrasenia",placeholder="contrasenia",type="password")
-				a(href="/registrarse") Registrarse
-		else
-			div#userSection
-				p=usuario.nombre
-				a(href="/perfil/"+usuario.id)
-					img.profilePic(src=usuario.profile_pic)
-				a(href="/subir/")
-					img(src="static/img/subir.svg")
-				a(href="/configuracion/")
-					img(src="static/img/config.svg")
-				a(href="/salir/")
-					img(src="static/img/logout.svg")
-
+block index_content
 	div#content
 		div#publicaciones
 			each publicacion in publicaciones
@@ -35,4 +8,3 @@ block content
 					div.descripcion
 						p.titulo=publicacion.titulo
 						p.copete=publicacion.copete
-	footer N&S®©™

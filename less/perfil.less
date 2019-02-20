@@ -1,0 +1,35 @@
+@import "mixins/variables.less";
+
+body{
+	display: grid;
+	grid-template-rows: 50px auto 25px;
+}
+
+#perfilContent{
+
+	display: flex;
+
+	#perfil{
+
+		background-color: fade(@bgColor,40%);
+		width: 20%;
+
+		#perfilAvatar{
+			width: 100%;
+			height: auto;
+		}
+
+		#nombre{
+			text-align: center;
+			font-weight: bold;
+		}
+
+		#descripcion{
+			padding-left: 2%;
+		}
+	}
+
+	#publicaciones{
+		width: 75%;
+	}
+}

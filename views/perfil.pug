@@ -1,4 +1,12 @@
-extends layout.pug
+extends index_layout.pug
 
-block content
-	pre perfil
+block index_styles
+	link(rel="stylesheet",type="text/css",href="/static/css/perfil.css")
+
+block index_content
+	div#perfilContent
+		div#perfil
+			img#perfilAvatar(src=perfil.profilePic)
+			div#nombre=perfil.nombre
+			div#descripcion=perfil.descripcion
+		div#publicaciones

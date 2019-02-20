@@ -14,19 +14,29 @@ module.exports.indexGet = function(req, res) {
 		})
 	}
 
-	if(req.session.userId == undefined){
+	getDatosMenu(req,viewBag).then( () => {
 		res.render("index.pug",viewBag)
-		return
+	})
+}
+
+function getDatosMenu(req,retObj){
+
+	if(req.session.userId == undefined){
+		return Promise.resolve()
 	}
 
-	models["Usuarios"].findById(req.session.userId).then( usuario =>{
+	let promiseFind = models["Usuarios"].findById(req.session.userId)
 
-		viewBag.usuario = {
+	promiseFind.then( usuario =>{
+
+		retObj.usuario = {
 			"id": usuario.dataValues.id,
 			"nombre": usuario.dataValues.nombre,
 			"profile_pic": "/static/img/profile_pics/" + usuario.dataValues.profile_pic
 		}
-
-		res.render("index.pug",viewBag)
 	})
+
+	return promiseFind
 }
+
+module.exports.getDatosMenu = getDatosMenu

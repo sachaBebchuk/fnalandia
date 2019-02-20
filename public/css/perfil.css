@@ -1,0 +1,1 @@
+body{display:grid;grid-template-rows:50px auto 25px}#perfilContent{display:flex}#perfilContent #perfil{background-color:rgba(36,31,31,.4);width:20%}#perfilContent #perfil #perfilAvatar{width:100%;height:auto}#perfilContent #perfil #nombre{text-align:center;font-weight:700}#perfilContent #perfil #descripcion{padding-left:2%}#perfilContent #publicaciones{width:75%}
